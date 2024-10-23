@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jey O - The Owl of Wisdom</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Favicon link -->
+  <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<body>
+  <h1 class="center-top">The Mystic Owl: Spreading digital magic!</h1>
+  <div class='owl'></div>
+  
+  <div class="audio-container">
+    <audio id="owlAudio" loop>
+      <source src="tawny-owl-echoed.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Adding the audio icon -->
+  <div class="audio-icon" onclick="toggleSound()" style="position: absolute; top: 40px; right: 40px; cursor: pointer; z-index: 30;">
+    <img id="audioIcon" src="Speaker Of.png" alt="Toggle Sound" width="30">
+  </div>
+
+  <script>
+    // Function to toggle audio playback
+    function toggleSound() {
+      var audio = document.getElementById('owlAudio');
+      var icon = document.getElementById('audioIcon');
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'Speaker On.png'; // Update to speaker on when sound plays
+      } else {
+        audio.pause();
+        icon.src = 'Speaker Of.png'; // Update to speaker off when sound pauses
+      }
+    }
+
+    // Set initial state of audio icon to "Off"
+    document.addEventListener('DOMContentLoaded', function() {
+      var icon = document.getElementById('audioIcon');
+      icon.src = 'Speaker Of.png';
+    });
+  </script>
+</body>
+</html>
